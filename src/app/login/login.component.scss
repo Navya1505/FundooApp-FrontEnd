@@ -1,0 +1,93 @@
+.mainDiv{
+    padding: 30px 0px 0px 0px;
+    border: 1px solid rgb(220, 213, 213);
+    border-radius: 8px;
+    margin-top: 6%;
+    margin-left: 40%;
+    text-align: center;
+    height: 80%;
+    position: absolute;
+    border: 0.5px rgb(222, 214, 214);
+}
+.innerDiv{
+    display: block;
+    
+    text-align: justify;
+}
+.h1-section-account{
+    color: #202124;
+   font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    margin-top: -5px;
+    text-align:center;
+}
+
+.h1-section-SignIn{
+    color: #202124;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height:  1.33;
+    word-break: break-word;
+}
+
+.linkProperty{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    text-transform: none;
+    text-decoration: none;
+    margin-top: -10px;
+    margin-left: -30px;
+    color:var(--gm-colortextbutton-ink-color,#0366E8)
+}
+
+.textParagraph{
+    margin-top: 50px;
+    margin-left: -28px;
+}
+
+.xyz{
+    color: #202124;
+    font-size:16px;
+    margin: 1px 1px 0px 1px;
+    padding:13px 15px;
+    z-index: 1;
+}
+
+.section-paragraph{
+    margin-top: 40px;
+    white-space: normal;
+    padding-bottom: 3px;
+    padding-top: 9px;
+    color: #6f7277;
+    font-size: 14px;
+    line-height: 1.4286;
+    margin-left: -30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn-Property{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--gm-colortextbutton-ink-color,#0366e8);
+    margin-left: -45px;
+}
+
+.btn-layout{
+    margin-top: 10%;
+}
+
+.btn-create{
+    background-color: var(--gm-colortextbutton-ink-color,#0366E8);
+    color: white;
+    margin-right: -35px;
+    border:none;
+    padding:1px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
