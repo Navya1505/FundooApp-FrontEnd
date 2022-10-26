@@ -1,3 +1,5 @@
+<form [formGroup]="login" (ngSubmit)="onSubmit()">
+
 <div fxLayout="column" fxLayoutAlign="space-between center" class="mainDiv">
   <div fxLayout="column" fxLayoutAlign="space-around" class="innerDiv">
       <div fxLayout="row" fxLayoutAlign="center center" class="innerDiv">
@@ -19,11 +21,13 @@
       <div fxLayout="column" fxLayoutAlign="center center" class="xyz">
           <mat-form-field appearance="outline" style="width:135%">
               <mat-label>Username</mat-label>
-              <input matInput placeholder="" type="email">
+              <input matInput placeholder="" type="email" formControlName="username">
+              <mat-error>Username is required</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" style="width:135%">
-              <mat-label>Password</mat-label>
-              <input matInput placeholder="" type="email">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName="password" type="password">
+            <mat-error>Password is required</mat-error>
           </mat-form-field>
       </div>
       <a href="#" class="linkProperty" style="">Forget Password?</a>
@@ -37,3 +41,4 @@
       </div>
   </div>
 </div>
+</form>
