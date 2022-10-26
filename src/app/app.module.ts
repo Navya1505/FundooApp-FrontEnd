@@ -22,7 +22,6 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent
-  
   ],
   imports: [
     BrowserModule,
@@ -33,7 +32,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatCheckboxModule,
     FlexLayoutModule,
      MatButtonModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
