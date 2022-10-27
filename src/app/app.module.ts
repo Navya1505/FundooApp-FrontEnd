@@ -16,7 +16,7 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
      MatButtonModule,
      ReactiveFormsModule,
+     HttpClientModule
   
     
   ],
