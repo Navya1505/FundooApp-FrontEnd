@@ -8,23 +8,23 @@ export class UserserviceService {
 
   constructor( private http:HttpService) { }
 
-  registration(data:any){
+  register(data:any){
     let header={
       headers:new HttpHeaders({
         'Content-Type': 'application/json'
       })
     }
-    return this.http.postService('https://localhost:44382/api/User/Register',data,false,header)
+    return this.http.postService('https://localhost:44382/api/User/register',data,false,header)
   }
 
   login(data: any) {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'token'
+        'Authorization': 'data'
       })
     }
-    return this.http.postService('https://localhost:44382/api/User/Login', data, false, header)
+    return this.http.postService('https://localhost:44382/api/User/login', data, false, header)
   }
 
 
@@ -32,10 +32,10 @@ export class UserserviceService {
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'token'
+        'Authorization': 'data'
       })
     }
-    return this.http.postService('https://localhost:44382/api/User/ForgetPassword?', data, false, header)
+    return this.http.postService('https://localhost:44382/api/User/ForgetPassword?EmailId=navyachowdary1505%40gmail.com', data, false, header)
   }
 }
 

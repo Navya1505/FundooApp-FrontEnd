@@ -29,10 +29,10 @@ export class RegisterComponent implements OnInit {
       let data = {
         firstName: this.registerForm.value.firstName,
         lastName: this.registerForm.value.lastName,
-        emailId: this.registerForm.value.emailId,
+        emailID: this.registerForm.value.emailId,
         password: this.registerForm.value.password
       }
-      this.user.registration(data).subscribe((Response: any) => {
+      this.user.register(data).subscribe((Response: any) => {
         console.log(Response);
       })
     }

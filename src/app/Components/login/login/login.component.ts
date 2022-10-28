@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.login = this.formBuilder.group({
-      emailId: ['', Validators.required],
+      emailID: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
   }
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
     if (this.login.valid) {
       console.log("do api call");
       let data = {
-        emailId: this.login.value.emailId,
-        password: this.login.value.password
+        EmailID: this.login.value.emailID,
+        Password: this.login.value.password
       }
       this.user.login(data).subscribe((Response: any) => {
         console.log(Response);

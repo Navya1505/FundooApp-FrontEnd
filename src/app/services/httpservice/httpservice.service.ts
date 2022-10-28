@@ -8,6 +8,7 @@ export class HttpService {
   constructor(private httpclient:HttpClient) { }
 
   postService(url:string,data:any,token:boolean=false,options:any){
+    console.log(data)
 
     return this.httpclient.post(url,data,token && options)
   }

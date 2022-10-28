@@ -6,12 +6,25 @@ import { LoginComponent } from './Components/login/login/login.component';
 
 import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword/resetpassword.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { ArchieveComponent } from './Components/archieve/archieve.component';
 const routes: Routes = [
-  {path:'registration',component:RegisterComponent},
+  {path:'register',component:RegisterComponent},
   { path:'login',component:LoginComponent},
   {path:'forgetpassword',component:ForgetpasswordComponent},
-  {path:'resetpassword',component:ResetpasswordComponent}
-];
+  {path:'resetpassword',component:ResetpasswordComponent},
+  {
+    
+      path: 'dashboard', component: DashboardComponent,
+      children: [
+        {path :'createNotes',component:CreatenotesComponent},
+        {path :'archieve',component:ArchieveComponent},
+        {path :'trashNotes',component:TrashComponent},
+      ]
+    }
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
