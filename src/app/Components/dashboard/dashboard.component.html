@@ -1,8 +1,43 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="" class="example-toolbar">
+    <mat-toolbar class="example-toolbar" flexLayout="row" fxLayoutAlign="space-between center">
+        <div flexLayout="row" fxLayoutAlign="space-between center" >
+    
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name"> Fundoo</h1>
-    </mat-toolbar>
+      <h1 class="example-app-name"> 
+        <span style="color: blue;">F</span>
+                <span style="color: red;">u</span>
+                <span style="color: yellow;">n</span>
+                <span style="color: green;">d</span>
+                <span style="color: red;">o</span>
+                <span style="color: blue;">o</span>
+      </h1>
+      <div class="searchbox">
+        
+        <input matInput placeholder="search" type=""   >
+        <button matSuffix mat-button><mat-icon >search</mat-icon></button>
+      </div>
+    
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <img src="../../../assets/Refresh.png">
+        </div>
+        <div>
+            <img src="../../../assets/view.png">
+        
+            <img src="../../../assets/settingicon.png">
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <img src="../../../assets/menu.png">
+
+        </div>
+        <div>
+            <img src="../../../assets/profil2.png">
+
+        </div>
+
+    </div>
   
     <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
