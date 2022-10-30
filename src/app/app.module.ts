@@ -25,6 +25,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { NoteIconsComponent } from './Components/note-icons/note-icons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { ArchieveComponent } from './Components/archieve/archieve.component';
     DashboardComponent,
     CreatenotesComponent,
     TrashComponent,
-    ArchieveComponent
+    ArchieveComponent,
+    NoteIconsComponent
 
   ],
   imports: [
@@ -52,7 +55,8 @@ import { ArchieveComponent } from './Components/archieve/archieve.component';
      MatSidenavModule,
      MatListModule,
      MatIconModule,
-     MatToolbarModule
+     MatToolbarModule,
+     MatExpansionModule
   
     
   ],
