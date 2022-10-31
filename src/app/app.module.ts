@@ -27,6 +27,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NoteIconsComponent } from './Components/note-icons/note-icons.component';
+import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
+import {MatCardModule} from '@angular/material/card';
+import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,9 @@ import { NoteIconsComponent } from './Components/note-icons/note-icons.component
     CreatenotesComponent,
     TrashComponent,
     ArchieveComponent,
-    NoteIconsComponent
+    NoteIconsComponent,
+     GetallnotesComponent,
+    DisplaynotesComponent
 
   ],
   imports: [
@@ -56,7 +61,8 @@ import { NoteIconsComponent } from './Components/note-icons/note-icons.component
      MatListModule,
      MatIconModule,
      MatToolbarModule,
-     MatExpansionModule
+     MatExpansionModule,
+     MatCardModule
   
     
   ],

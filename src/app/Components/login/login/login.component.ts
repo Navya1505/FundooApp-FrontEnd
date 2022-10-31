@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
         Password: this.login.value.password
       }
       this.user.login(data).subscribe((Response: any) => {
-        console.log(Response);
+        console.log('responce :=>', Response.data);
+        localStorage.setItem('token', Response.data)
       })
     } else {
       console.log("Invalid data", this.login.value);

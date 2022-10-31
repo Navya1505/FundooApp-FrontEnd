@@ -12,4 +12,7 @@ export class HttpService {
 
     return this.httpclient.post(url,data,token && options)
   }
+  getService(url:string,token:boolean=false,options:any){
+    return this.httpclient.get(url,token && options)
+  }
  }
