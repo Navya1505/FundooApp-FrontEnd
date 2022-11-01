@@ -21,8 +21,6 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -30,6 +28,10 @@ import { NoteIconsComponent } from './Components/note-icons/note-icons.component
 import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
 import {MatCardModule} from '@angular/material/card';
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
+import { UpdatenotesComponent } from './Components/updatenotes/updatenotes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,8 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
     ArchieveComponent,
     NoteIconsComponent,
      GetallnotesComponent,
-    DisplaynotesComponent
+    DisplaynotesComponent,
+    UpdatenotesComponent
 
   ],
   imports: [
@@ -62,7 +65,10 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
      MatIconModule,
      MatToolbarModule,
      MatExpansionModule,
-     MatCardModule
+     MatCardModule,
+     MatDialogModule,
+     MatListModule,
+     MatToolbarModule
   
     
   ],

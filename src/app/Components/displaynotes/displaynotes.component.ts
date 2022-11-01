@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { NoteserviceService } from 'src/app/services/noteservice/noteservice.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UpdatenotesComponent } from '../updatenotes/updatenotes.component';
 @Component({
   selector: 'app-displaynotes',
   templateUrl: './displaynotes.component.html',
   styleUrls: ['./displaynotes.component.scss']
 })
 export class DisplaynotesComponent implements OnInit {
-  notes:any;
-  constructor(private note: NoteserviceService) { }
+ @Input () getnotes:any;
+
+  constructor(private dialog:MatDialog) { }
   ngOnInit() {
 
+}
+openDialog(noteArray: any): void {
+  const dialogRef = this.dialog.open(UpdatenotesComponent, {
+    width: '400px',
+    height: '150px',
+    data: noteArray,
+  });
+  dialogRef.afterClosed().subscribe((result:any) => {
+    console.log('The dialog was closed');
+  });
 }
 }

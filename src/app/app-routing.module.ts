@@ -27,9 +27,10 @@ const routes: Routes = [
         {path:'getallnotes',component:GetallnotesComponent},
         {path :'archieve',component:ArchieveComponent},
         {path :'trash',component:TrashComponent},
+        {path:'displaynotes',component:DisplaynotesComponent},
       ]
     },
-    {path:'displaynotes',component:DisplaynotesComponent},
+  
   
   ];
 

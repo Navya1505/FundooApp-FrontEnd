@@ -27,9 +27,9 @@ export class CreatenotesComponent implements OnInit {
       console.log("do Api call");
       let data = {
         title: this.createNote.value.title,
-        discription: this.createNote.value.discription,
+        discription: this.createNote.value.description,
       }
-      this.note.addNotes(data).subscribe((Response:any)=>{
+      this.note.CreateNotes(data).subscribe((Response:any)=>{
         console.log(Response);
       })
     }else{

@@ -11,7 +11,7 @@ export class NoteserviceService {
   constructor(private httpService: HttpService) {
     this.token = localStorage.getItem("token")
   }
-  addNotes(data: any) {
+  CreateNotes(data: any) {
     console.log(data,this.token);
     let header = {
       headers: new HttpHeaders({
@@ -25,11 +25,11 @@ export class NoteserviceService {
   GetNotes(){
     console.log(this.token);
     let header={
-      Headers:new HttpHeaders({
+      headers:new HttpHeaders({
         'Content-type':'application/json',
-        'Authorization':'Bearer'+this.token
+        'Authorization':'Bearer '+this.token
       })
     }
-    return this.httpService.getService('https://localhost:44382/api/Note/Get',true,header)
+    return this.httpService.getService('https://localhost:44382/api/Note/GetNotes',true,header)
   }
 }
