@@ -13,6 +13,7 @@ import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { NoteIconsComponent } from './Components/note-icons/note-icons.component';
 import { DisplaynotesComponent}from './Components/displaynotes/displaynotes.component';
 import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
+import { UpdatenotesComponent } from './Components/updatenotes/updatenotes.component';
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
   { path:'login',component:LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
         {path :'archieve',component:ArchieveComponent},
         {path :'trash',component:TrashComponent},
         {path:'displaynotes',component:DisplaynotesComponent},
+        {path:'Updatenotes',component:UpdatenotesComponent}
       ]
     },
   
