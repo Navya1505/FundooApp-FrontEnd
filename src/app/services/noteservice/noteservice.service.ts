@@ -35,7 +35,7 @@ export class NoteserviceService {
   
   }
 
-  updatenotes(data: any,NoteId:any) {
+  UpdateNotes(data: any,NoteId:any) {
     console.log("aws",data);
     console.log(this.token);
 
@@ -45,6 +45,20 @@ export class NoteserviceService {
         'Authorization':'Bearer ' + this.token
       })
     }
-    return this.httpService.putService('https://localhost:44382/api/Note/UpdateNotes?NoteId='+NoteId,data, true, header)
+    return this.httpService.putService('https://localhost:44382/api/Note/UpdateNotes',data, true, header)
   }
+
+
+archieveNotes(data: any) {
+  console.log("aws",data);
+  console.log(this.token);
+
+  let header = {
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization':'Bearer ' + this.token
+    })
+  }
+  return this.httpService.putService(`https://localhost:44368/api/Note/Archive?noteid=${data.noteID}`,data, true, header)
+}
 }

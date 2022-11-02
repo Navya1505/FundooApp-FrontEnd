@@ -32,14 +32,13 @@ onNoClick(): void {
     
   let data ={ 
     title: this.title,
-    note: this.description
+  note: this.description
 
   }
-  this.notes.updatenotes(data, this.NoteId).subscribe((Response: any) => {
+  this.notes. UpdateNotes(data, this.NoteId).subscribe((Response: any) => {
     console.log(Response);
   });
   this.dialogRef.close();
 }
 }
-
 

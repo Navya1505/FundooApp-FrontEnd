@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { FormsModule } from '@angular/forms';
      MatDialogModule,
      MatListModule,
      MatToolbarModule,
-     FormsModule
+     FormsModule,
+     
   
     
   ],
