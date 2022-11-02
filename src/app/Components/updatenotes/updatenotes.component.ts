@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { title } from 'process';
 import { NoteserviceService } from 'src/app/services/noteservice/noteservice.service';
 
 @Component({
@@ -7,13 +9,17 @@ import { NoteserviceService } from 'src/app/services/noteservice/noteservice.ser
   styleUrls: ['./updatenotes.component.scss']
 })
 export class UpdatenotesComponent implements OnInit {
-  title: any;
-  description: any;
+//  @Input() public data: any;
 
-
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<UpdatenotesComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,) {
+    
+   }
 
   ngOnInit(): void {
-  }
+    
+}
+close(){
 
+}
 }
