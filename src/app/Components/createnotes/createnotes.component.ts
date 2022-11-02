@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./createnotes.component.scss']
 })
 export class CreatenotesComponent implements OnInit {
+  show =false;
   createNote!: FormGroup;
   panelOpenState = false;
   submitted = false;
@@ -19,7 +20,9 @@ export class CreatenotesComponent implements OnInit {
       description: ['', Validators.required]
     });
   }
-
+  isShow(){
+    this.show=true;
+  }
   onSubmit() {
     this.submitted = true;
     if (this.createNote.valid) {

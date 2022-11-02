@@ -32,20 +32,19 @@ export class NoteserviceService {
       })
     }
     return this.httpService.getService('https://localhost:44382/api/Note/GetNotes',true,header)
+  
   }
 
+  updatenotes(data: any,NoteId:any) {
+    console.log("aws",data);
+    console.log(this.token);
 
-updatenotes(data: any,noteid:any) {
-  console.log(data);
-  console.log(this.token);
-  console.log(this.NoteId)
-
-  let header = {
-    headers: new HttpHeaders({
-      'Content-type': 'application/json',
-      'Authorization':'Bearer ' + this.token
-    })
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization':'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService('https://localhost:44382/api/Note/UpdateNotes?NoteId='+NoteId,data, true, header)
   }
-  return this.httpService.putService(`https://localhost:44382/api/Note/Update/${noteid}`, data, true, header)
-}
 }
