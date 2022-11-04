@@ -73,6 +73,17 @@ delete(data: any) {
   };
   return this.httpService.putService('https://localhost:44382/api/Note/Trash?NoteId='+data,null, true,header );
 }
+change_note_color(data:any){
+  console.log(this.token);
+  let header={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization':'Bearer '+this.token
+    })
+  }
+  return this.httpService.putService('https://localhost:44382/api/Note/color?NoteId=${data.noteID}&color=${data.color}', data, true, header)
+}
+}
   
 
-}
+

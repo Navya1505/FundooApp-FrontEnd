@@ -3,6 +3,15 @@
         <img *ngIf="!noteCard.trash" src="../../../assets/notifications.svg">
         <img *ngIf="!noteCard.trash" src="../../../assets/collaborate.png">
         <img *ngIf="!noteCard.trash" mat-button src="../../../assets/palette.svg">
+
+        <mat-menu #color="matMenu" yPosition="below">
+            <div class="palette">
+                <div *ngFor="let color of colorarray">
+                    <button mat-mini-fab [style.background-color]="color?.Colorcode"
+                        (click)="setColor(color?.Colorcode)"></button>
+                </div>
+            </div>
+        </mat-menu>
         <img *ngIf="!noteCard.trash" src="../../../assets/image.svg">
 
         <img  *ngIf="!noteCard.archieve && !noteCard.trash" (click)="Archieve()" src="../../../assets/archieve.svg" >

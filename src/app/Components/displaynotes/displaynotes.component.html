@@ -1,5 +1,8 @@
 <div fxLayout="row" fxLayout="row wrap">
-    <mat-card *ngFor="let noteArray of getnotes">
+    <div *ngFor="let noteArray of getnotes">
+        
+        <mat-card [style.background]="noteArray.color">
+
         <div>
             <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
                 {{noteArray.title}}
@@ -13,7 +16,11 @@
         <div>
             <div>
                 <app-note-icons [noteCard]="noteArray"></app-note-icons>
-            </div>
+                </div>
         </div>
-    </mat-card>
-  </div>
+            </mat-card>
+        </div>
+            </div>
+        
+    
+  
