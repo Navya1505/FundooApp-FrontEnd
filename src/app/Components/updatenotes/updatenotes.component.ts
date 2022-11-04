@@ -16,26 +16,25 @@ NoteId: any;
 
 
   constructor(private notes: NoteserviceService,public dialogRef: MatDialogRef<UpdatenotesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,) {
+    @Inject(MAT_DIALOG_DATA) public modeldata: any,) {
     
    }
 
   ngOnInit(): void {
-    console.log(this.data);
-    this.title = this.data.title;
-    this.description = this.data.note;
-    this.NoteId=this.data.noteID;
+    console.log(this.modeldata);
+    this.title = this.modeldata.title;
+    this.description = this.modeldata.description;
+    this.NoteId=this.modeldata.noteId;
 
     
 }
 onNoClick(): void {
     
-  let data ={ 
-    title: this.title,
-  note: this.description
-
-  }
-  this.notes. UpdateNotes(data, this.NoteId).subscribe((Response: any) => {
+  let updateNote ={
+      title: this.title,
+    Description: this.description,
+};
+  this.notes. UpdateNotes(updateNote,this.NoteId).subscribe((Response: any) => {
     console.log(Response);
   });
   this.dialogRef.close();

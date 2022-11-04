@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpservice/httpservice.service';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -35,21 +35,21 @@ export class NoteserviceService {
   
   }
 
-  UpdateNotes(data: any,NoteId:any) {
-    console.log("aws",data);
+  UpdateNotes(updateNote: any,NoteId: number) {
+    console.log("aws",updateNote);
     console.log(this.token);
 
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
         'Authorization':'Bearer ' + this.token
-      })
+      }),
     }
-    return this.httpService.putService('https://localhost:44382/api/Note/UpdateNotes',data, true, header)
+    return this.httpService.putService('https://localhost:44382/api/Note/UpdateNotes?noteid='+NoteId, updateNote,true, header)
   }
 
 
-archieveNotes(data: any) {
+  Archieve(data: any) {
   console.log("aws",data);
   console.log(this.token);
 
@@ -59,6 +59,20 @@ archieveNotes(data: any) {
       'Authorization':'Bearer ' + this.token
     })
   }
-  return this.httpService.putService(`https://localhost:44368/api/Note/Archive?noteid=${data.noteID}`,data, true, header)
+  return this.httpService.putService('https://localhost:44382/api/Note/Archieve?NoteId='+data,null, true, header)
 }
+delete(data: any) {
+  console.log(data);
+   let header = {
+    headers: new HttpHeaders({
+      
+      'Content-type': 'application/json',
+      'Authorization' : 'Bearer '+ this.token,
+
+    }),
+  };
+  return this.httpService.putService('https://localhost:44382/api/Note/Trash?NoteId='+data,null, true,header );
+}
+  
+
 }

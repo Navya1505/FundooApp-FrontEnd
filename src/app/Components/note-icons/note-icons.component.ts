@@ -15,16 +15,31 @@ export class NoteIconsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onArchieve(){
-    let data ={ 
-      noteID:[this.noteCard.noteID]
-
-    }
-    console.log(data);
-    this.note.archieveNotes(data).subscribe((Response: any) => {
+  Archieve(){
+    this.note. Archieve(this.noteCard.noteID).subscribe((Response: any) => {
       console.log(Response);
-    })
+     })
 
   }
+  isTrash() {
+    this.note.delete(this.noteCard.noteID).subscribe((response: any) => {
+      console.log(response);
+
+    })
+  }
+
+  UnArchievenote() {
+    this.note.Archieve(this.noteCard.noteID).subscribe((response: any) => {
+      console.log("note unarchieve",response);
   
-}
+    })
+  }
+    Restore() {
+this.note.delete(this.noteCard.noteID).subscribe((response: any) => {
+        console.log("note restore",response);
+  
+      })
+    }
+  
+  
+  }

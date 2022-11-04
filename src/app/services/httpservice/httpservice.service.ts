@@ -15,7 +15,7 @@ export class HttpService {
   getService(url:string,token:boolean=false,options:any){
     return this.httpclient.get(url,token && options)
   }
-  putService(url:string,data:any,token:boolean=false,options:any){
-    return this.httpclient.put(url,data,token && options)
+  putService(url:string,updateNote:any,token:boolean=false,options:any){
+    return this.httpclient.put(url,updateNote,token && options)
   }
  }

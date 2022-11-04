@@ -1,19 +1,18 @@
 <div fxLayout="row" fxLayout="row wrap">
-    <mat-card *ngFor="let noteArray of getnotes"
-        style="width:180px;max-height:500px;background-color:white;margin-top: 20px; margin-left: 10px;">
+    <mat-card *ngFor="let noteArray of getnotes">
         <div>
             <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
                 {{noteArray.title}}
-                <img style="width: 16px;" class="img" src="../../../assets/pin.svg">
+                <img class="img" src="../../../assets/pin.svg">
             </div> <br>
-            <div (click)="openDialog(noteArray)" style="margin-bottom: 10px; padding-bottom: 5px;">
+            <div class="desc-class" (click)="openDialog(noteArray)">
                 {{noteArray.note}}
             </div>
         </div>
   
         <div>
             <div>
-                <app-note-icons> [noteCard]="noteArray"></app-note-icons>
+                <app-note-icons [noteCard]="noteArray"></app-note-icons>
             </div>
         </div>
     </mat-card>

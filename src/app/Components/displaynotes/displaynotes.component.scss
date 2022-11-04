@@ -1,22 +1,19 @@
-.main-div {
-    margin-top: 50px;
-    margin-left: 5vh;
-    width: 40vh;
-}
-
-.note-section {
-    border: none;
+.add-note-input {
     outline: none;
-    width: 100%;
-    box-sizing: border-box;
-    resize: none;
-    font-weight: bold;
-    letter-spacing: .00625em;
-    font-family: "Google Sans", Roboto, Arial, sans-serif;
-    font-size: 1rem;
+    border: none;
+    font-size: 0.875rem;
     font-weight: 500;
-    line-height: 1.5rem;
-    text-decoration: center;
-    padding-top: 5px;
-    margin-top: -10px;
-}
+  }
+  .img{
+    width: 16px;
+    height: 16px; 
+  }
+  .mat-card{
+    width:130px;max-height:500px;margin-top: 20px; margin-left: 10px;
+  }
+  .img{
+    width: 16px;
+  }
+  .desc-class{
+    margin-bottom: 10px; padding-bottom: 5px;
+  }

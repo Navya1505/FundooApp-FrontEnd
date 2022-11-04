@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { FormsModule } from '@angular/forms';
      MatListModule,
      MatToolbarModule,
      FormsModule,
+     MatMenuModule
      
   
     

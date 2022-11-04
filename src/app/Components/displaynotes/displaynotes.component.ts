@@ -17,7 +17,7 @@ openDialog(noteArray: any): void {
   const dialogRef = this.dialog.open(UpdatenotesComponent, {
     width: '400px',
     height: '150px',
-    data: {title: noteArray.title, description: noteArray.description},
+    data: {title: noteArray.title, description: noteArray.description,noteId: noteArray.noteID},
   });
   dialogRef.afterClosed().subscribe((result:any) => {
     console.log('The dialog was closed');
