@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component,EventEmitter, Inject, Input, OnInit ,Output} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { title } from 'process';
 import { NoteserviceService } from 'src/app/services/noteservice/noteservice.service';
@@ -9,7 +9,7 @@ import { NoteserviceService } from 'src/app/services/noteservice/noteservice.ser
   styleUrls: ['./updatenotes.component.scss']
 })
 export class UpdatenotesComponent implements OnInit {
-//  @Input() public data: any;
+  @Output() noteUpdated = new EventEmitter<any>();
 title: any;
 description: any;
 NoteId: any;
@@ -36,8 +36,11 @@ onNoClick(): void {
 };
   this.notes. UpdateNotes(updateNote,this.NoteId).subscribe((Response: any) => {
     console.log(Response);
+     this.noteUpdated.emit(Response);
   });
   this.dialogRef.close();
 }
+Reload(event:any){
+  console.log(event);
 }
-
+}

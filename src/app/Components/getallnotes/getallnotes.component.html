@@ -1,2 +1,2 @@
-<app-createnotes></app-createnotes>
-<app-displaynotes  [getnotes]="noteArray" (displaytogetallnotes)=" receiveMessage($event)"></app-displaynotes>
+<app-createnotes  (messageEvent)="receiveMessage($event)"></app-createnotes>
+<app-displaynotes  [getnotes]="noteList" (updatedisplay)="updatedicon($event)" (displayArchive)="receiveMessagearchive($event)" (changeNoteEvent)="iconRefresh($event)"></app-displaynotes>

@@ -34,7 +34,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
-
+import { AuthguradServiceService } from './services/authgurad-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,12 +73,15 @@ import {MatMenuModule} from '@angular/material/menu';
      MatListModule,
      MatToolbarModule,
      FormsModule,
-     MatMenuModule
+     MatMenuModule,
+    
      
   
     
   ],
-  providers: [],
+  providers: [
+    AuthguradServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

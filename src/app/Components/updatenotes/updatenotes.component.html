@@ -8,7 +8,7 @@
     </div>
     <div class="icon-bar" fxLayout="row" fxLayoutAlign="space-between center">
 
-        <app-note-icons></app-note-icons>
+        <app-note-icons  (autorefresh)="Reload($event)"></app-note-icons>
         <button mat-button class="closebutton" (click)="onNoClick()">Close</button>
 
     </div>

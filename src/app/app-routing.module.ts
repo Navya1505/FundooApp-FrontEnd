@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenicationGuard } from './Components/authenication.guard';
 
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login/login.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:'iconcomponent' ,component:NoteIconsComponent},
   {
     
-      path: 'dashboard', component: DashboardComponent,
+      path: 'dashboard', component: DashboardComponent,canActivate:[AuthenicationGuard],
       children: [
         {path :'createNotes',component:CreatenotesComponent},
         {path:'getallnotes',component:GetallnotesComponent},

@@ -8,7 +8,7 @@ import { NoteserviceService } from 'src/app/services/noteservice/noteservice.ser
 })
 export class GetallnotesComponent implements OnInit {
   getNotes: any;
-  noteArray: any;
+  noteList: any;
 constructor(private note:NoteserviceService) { }
 
   ngOnInit(): void {
@@ -17,11 +17,23 @@ constructor(private note:NoteserviceService) { }
   getAllNote() {
     this.note.GetNotes().subscribe((response: any) => {
       console.log(response.data);
-      this.noteArray = response.data;
+      this.noteList = response.data;
     })
   }
   receiveMessage($event: any) {
     console.log($event);
+    this.getAllNote();
+  }
+  updatedicon($event:any) {
+    console.log($event);
+    this.getAllNote();
+  }
+  receiveMessagearchive($event:any){
+    console.log($event);
+    this.getAllNote();
+  }
+  iconRefresh($event:any){
+    console.log($event)
     this.getAllNote();
   }
 }
