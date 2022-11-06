@@ -81,7 +81,7 @@ change_note_color(data:any){
       'Authorization':'Bearer '+this.token
     })
   }
-  return this.httpService.putService('https://localhost:44382/api/Note/color?NoteId=${data.noteID}&color=${data.color}', data, true, header)
+  return this.httpService.putService('https://localhost:44382/api/Note/color?NoteId='+ data,null, true, header)
 }
 }
   

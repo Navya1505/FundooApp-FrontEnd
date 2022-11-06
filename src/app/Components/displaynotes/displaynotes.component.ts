@@ -14,7 +14,7 @@ export class DisplaynotesComponent implements OnInit {
 
   constructor(private dialog:MatDialog) { }
   ngOnInit() {
-
+console.log(this.getnotes);
 }
 openDialog(noteArray: any): void {
   const dialogRef = this.dialog.open(UpdatenotesComponent, {

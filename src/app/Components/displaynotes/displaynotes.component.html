@@ -1,23 +1,18 @@
-<div fxLayout="row" fxLayout="row wrap">
+<div fxLayout="row wrap" fx Align="" class="main-div" style="width:auto;">
     <div *ngFor="let noteArray of getnotes">
         
         <mat-card [style.background]="noteArray.color">
-
-        <div>
-            <div fxLayout="row" fxLayoutAlign="space-between" class="add-note-input" (click)="openDialog(noteArray)">
-                {{noteArray.title}}
-                <img class="img" src="../../../assets/pin.svg">
-            </div> <br>
-            <div class="desc-class" (click)="openDialog(noteArray)">
-                {{noteArray.note}}
-            </div>
-        </div>
-  
-        <div>
-            <div>
+            <div fxLayout="row" fxLayoutAlign="" class="pin-text">
+                <textarea name="text" id="text" class="note-section" placeholder="Title"
+                    (click)="openDialog(noteArray)"  [style.background]="noteArray.color">{{noteArray.title}}</textarea>
+                <img src="../../../assets/pin.svg" alt="">
+           </div>
+           <textarea name="text" id="text" class="note-section" placeholder="Take a note..."
+           (click)="openDialog(noteArray)" [style.background]="noteArray.color">{{noteArray.description}}</textarea>
+       <div fxLayout="row" fxLayoutAlign="space-between end">
+            
                 <app-note-icons [noteCard]="noteArray"></app-note-icons>
-                </div>
-        </div>
+                </div>  
             </mat-card>
         </div>
             </div>

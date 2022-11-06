@@ -1,4 +1,4 @@
-import { Component,EventEmitter, OnInit,Output } from '@angular/core';
+import { Component,EventEmitter, OnInit,Input,Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  import { NoteserviceService } from 'src/app/services/noteservice/noteservice.service';
 
@@ -26,19 +26,27 @@ export class CreatenotesComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
+    this.show=false;
     if (this.createNote.valid) {
       console.log("valid Data",this.createNote.value);
       console.log("do Api call");
       let data = {
         title: this.createNote.value.title,
         description: this.createNote.value.description,
+        color:this.createNote.value.color
       }
       this.note.CreateNotes(data).subscribe((Response:any)=>{
         console.log(Response);
         this.messageEvent.emit(Response)
       });
     }
-    this.createNote.reset();
+  else {
+    console.log("Invalid Data", this.createNote.value);
+    console.log("no api call")
   }
- 
+}
+
+resetForm() {
+  this.createNote.reset();
+}
 }

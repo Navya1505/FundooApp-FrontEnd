@@ -1,5 +1,8 @@
 import { Component,EventEmitter,Input,Output, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NoteserviceService } from 'src/app/services/noteservice/noteservice.service';
+import { ArchieveComponent } from '../archieve/archieve.component';
+import { TrashComponent } from '../trash/trash.component';
 
 @Component({
   selector: 'app-note-icons',
@@ -19,14 +22,27 @@ export class NoteIconsComponent implements OnInit {
   {Colorcode:"rgb(255, 255, 0)"},{Colorcode:"rgb(255, 140, 26)"},
   {Colorcode:"rgb(102, 204, 255)"},
   {Colorcode:"rgb(38,30,238)"},
+  {Colorcode:"rgb(255, 255, 255)"},
+  {Colorcode:"	rgb(249, 246, 238)"},
   {Colorcode:"rgb(51, 153, 102)"}];
+  
+
   colorId: any;
   isArchieve:boolean=false;
+  Trash:boolean=false;
 
-  constructor(private note:NoteserviceService) { }
+  constructor(private note:NoteserviceService ,private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.noteCard);
+    let Component = this.activatedroute.snapshot.component;
+ if (Component == TrashComponent) {
+      this.noteCard.trash = true;
+    }
+
+    if (Component == ArchieveComponent) {
+      this.noteCard.archieve = true;
+    }
+  
   }
   Archieve(){
     this.note. Archieve(this.noteCard.noteID).subscribe((Response: any) => {
@@ -57,18 +73,16 @@ this.note.delete(this.noteCard.noteID).subscribe((response: any) => {
   
       })
     }
-    setColor(color: any) {
+    
+      updatecolor(color: any) {
       this.colorId = this.noteCard.color=color;
-      let Data = {
-        color: color,
-        noteID: [this.noteCard.noteID]
-      };
+      
        
-      this.note.change_note_color(Data).subscribe((response: any) => {
+      this.note.change_note_color(this.noteCard.noteID).subscribe((response: any) => {
         console.log(response);
         this.changeNoteEvent.emit(response);
   
-        console.log(Data)
+        console.log(response)
   
       })
   

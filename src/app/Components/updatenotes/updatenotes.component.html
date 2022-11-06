@@ -1,14 +1,11 @@
-<div class="note">
-    <div class="title" fxLayout="row" fxLayoutAlign="space-between">
-        <input type="text" placeholder="Title"  [(ngModel)]="title">
-        <img class="img-pin" class="img" src="../../../assets/pin.svg">
-    </div>
-    <div class="desc">
-        <input placeholder="take a note" type="text" [(ngModel)]="description">
-    </div>
-    <div class="icon-bar" fxLayout="row" fxLayoutAlign="space-between center">
+<div fxLayout="column" fxLayoutAlign="center center" class="main-div" >
+    <textarea name="" id="" class="note-section" placeholder="Title"[(ngModel)]="title"></textarea>
+    <textarea name="" id="" class="note-section" placeholder="Take a note..." [(ngModel)]="description"></textarea>
+        
+    
+    <div fxLayout="row" fxLayoutAlign="space around end">
 
-        <app-note-icons  (autorefresh)="Reload($event)"></app-note-icons>
+        <app-note-icons></app-note-icons>
         <button mat-button class="closebutton" (click)="onNoClick()">Close</button>
 
     </div>

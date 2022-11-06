@@ -49,7 +49,7 @@ import { AuthguradServiceService } from './services/authgurad-service.service';
     NoteIconsComponent,
      GetallnotesComponent,
     DisplaynotesComponent,
-    UpdatenotesComponent
+    UpdatenotesComponent,
 
   ],
   imports: [
